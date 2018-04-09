@@ -1,0 +1,23 @@
+body,html{ height:100%;}
+body{ background-color:#fff; color: #666;}
+*{ box-sizing:border-box;}
+body,p,ul,ol,li,h1,h2,h3,h4,h5,h6,dt,dd{ margin:0;}
+ul,ol,li{ padding:0;}
+ul,ol{ list-style-type:none;}
+$color: #ee7a23;
+.themeColor{ color:$color;}
+.colorSub{ color:#f00;}
+.colorBgSub{ background-color:#f00;}
+
+//公共字体样式
+.black{ color:#666;}
+.primary{ color:#409EFF;}
+.success{ color:#67C23A;}
+.warning{ color:#EB9E05;}
+.danger{ color:#FA5555;}
+.info{ color:#878D99;}
+
+.clearfix{ clear:both;}
+a:link,a:visited{ text-decoration:none;}
+
+[v-cloak]{ display:none;}
