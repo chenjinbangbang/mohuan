@@ -21,13 +21,13 @@
               </div>
               <div class="about_right">
                 <img src="../assets/img/about1.png" alt="">
-              </div>   
+              </div>
           </div>
 
           <div class="about2">
               <div class="about_left">
                 <img src="../assets/img/about2.png" alt="">
-              </div>   
+              </div>
               <div class="about_right">
                 <p>
                   <span>WHAT</span>
@@ -38,7 +38,7 @@
                   关于我们关于我们关于我们关于我们关于我们关于我们关于我们关于我们关于我们
                   关于我们关于我们关于我们关于我们关于我们关于我们关于我们关于我们关于我们
                 </p>
-              </div>              
+              </div>
             </div>
 
             <div class="about3">
@@ -57,13 +57,13 @@
               </div>
               <div class="about_right">
                 <img src="../assets/img/about3.png" alt="">
-              </div>   
+              </div>
             </div>
 
             <div class="about4">
               <div class="about_left">
                 <img src="../assets/img/about4.png" alt="">
-              </div>   
+              </div>
               <div class="about_right">
                 <p>
                   <span>HOW</span>
@@ -74,10 +74,10 @@
                   关于我们关于我们关于我们关于我们关于我们关于我们关于我们关于我们关于我们
                   关于我们关于我们关于我们关于我们关于我们关于我们关于我们关于我们关于我们
                 </p>
-              </div>              
+              </div>
             </div>
 
-        </div>  
+        </div>
 
         <div class="about_title">
           <p>BRAND</p>
@@ -147,7 +147,7 @@
               <img src="../assets/img/about8.png" alt="">
             </div>
           </div>
-          
+
         </div>
 
     </div>
@@ -180,7 +180,7 @@ export default {
     }
   }
   .about_main {
-    background-color: #eaebea;
+    background-color: #F6F6F6;
     padding-top: 50px;
     > div {
       width: 800px;

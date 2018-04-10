@@ -144,7 +144,7 @@
                 p{ margin-top:10px;}
             }
         }
-        .copyright{ height:60px; padding-top:5px; text-align:center; background-color:#eaebea;
+        .copyright{ height:60px; padding-top:5px; text-align:center; background-color:#EAE8EA;
             p{ margin-top:5px;}
         }
     }
