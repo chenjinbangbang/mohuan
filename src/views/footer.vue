@@ -88,6 +88,11 @@
             </div>
         </div>
 
+        <div class='copyright'>
+            <p>深圳市魔幻饰界科技有限公司</p>
+            <p>2016-2018 szmagichome.com 版权所有 ICP证： 粤ICP备16092309号-1</p>
+        </div>
+
     </div>
 </template>
 
@@ -104,7 +109,7 @@
 </script>
 
 <style lang="scss">
-    .navFooter{ widtH:100%; position:fixed; bottom:0;
+    .navFooter{ widtH:100%;
         .footer_link{ background-color:#514650; color:#fff; height:300px; padding:30px 0;
             .link_home{ width:768px; margin:auto; display:flex; justify-content:space-between;
                 >div{
@@ -121,7 +126,7 @@
                 }
             }
         }
-        .footer_detail{ width:950px; margin:auto; height:150px; display:flex; padding-top:20px;
+        .footer_detail{ width:950px; margin:auto; height:100px; display:flex; padding-top:30px;
             .logo1{
                 img{ width:60px;}
             }
@@ -138,6 +143,9 @@
             .address{ margin-left:auto; margin-right:50px;
                 p{ margin-top:10px;}
             }
+        }
+        .copyright{ height:60px; padding-top:5px; text-align:center; background-color:#eaebea;
+            p{ margin-top:5px;}
         }
     }
 </style>

@@ -8,8 +8,12 @@
             <img src="../assets/img/logo.png" alt="">
         </div>
         <div class="header_right">
-            <img src="../assets/img/nav.png" alt="" class="icon">
-            <img src="../assets/img/user.png" alt="" class="icon">
+            <router-link to="/about">
+                <img src="../assets/img/nav.png" alt="" class="icon">
+            </router-link>
+            <router-link to="/register">
+                <img src="../assets/img/user.png" alt="" class="icon">
+            </router-link>
         </div>
     </div>
 </template>
