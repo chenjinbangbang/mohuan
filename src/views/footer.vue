@@ -109,7 +109,7 @@
 </script>
 
 <style lang="scss">
-    .navFooter{ widtH:100%;
+    .navFooter{ width:100%;
         .footer_link{ background-color:#514650; color:#fff; height:300px; padding:30px 0;
             .link_home{ width:768px; margin:auto; display:flex; justify-content:space-between;
                 >div{
