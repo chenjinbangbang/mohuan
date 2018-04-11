@@ -4,6 +4,7 @@ body{ background-color:#fff; color: #666;}
 body,p,ul,ol,li,h1,h2,h3,h4,h5,h6,dt,dd{ margin:0;}
 ul,ol,li{ padding:0;}
 ul,ol{ list-style-type:none;}
+button{ outline:none;}
 $color: #ee7a23;
 .themeColor{ color:$color;}
 .colorSub{ color:#f00;}

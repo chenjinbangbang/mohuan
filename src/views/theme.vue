@@ -265,103 +265,176 @@
 </template>
 
 <script>
-  export default {
-    name: "theme",
-    components: {},
-    data() {
-      return {
-        ulLeft: -170+'px',
-        ulLeftIndex: 1,
-      };
-    },
-    methods: {
-      theme2_left(){
-          if(this.ulLeftIndex > 0){
-            this.ulLeftIndex--;
-          }
-          this.ulLeft = -170 * this.ulLeftIndex + 'px';
-      },
-      theme2_right(){
-        if(this.ulLeftIndex < 2){
-          this.ulLeftIndex++;
-        }
-        this.ulLeft = -170 * this.ulLeftIndex + 'px';
+export default {
+  name: "theme",
+  components: {},
+  data() {
+    return {
+      ulLeft: -170 + "px",
+      ulLeftIndex: 1
+    };
+  },
+  methods: {
+    theme2_left() {
+      if (this.ulLeftIndex > 0) {
+        this.ulLeftIndex--;
       }
+      this.ulLeft = -170 * this.ulLeftIndex + "px";
+    },
+    theme2_right() {
+      if (this.ulLeftIndex < 2) {
+        this.ulLeftIndex++;
+      }
+      this.ulLeft = -170 * this.ulLeftIndex + "px";
     }
-  };
+  }
+};
 </script>
 
 <style lang="scss">
-  .theme {
-    .theme_banner {
-      img {
-        width: 100%;
+.theme {
+  .theme_banner {
+    img {
+      width: 100%;
+    }
+  }
+
+  .theme1 {
+    text-align: center;
+    background: url("../assets/img/theme_bg.png") no-repeat;
+    background-position: top left;
+    .theme1_top {
+      margin: 30px 0;
+      p {
+        &:nth-child(1) {
+          font-size: 12px;
+        }
+        &:nth-child(2) {
+          font-size: 24px;
+          margin: 10px 0;
+        }
+        &:nth-child(3) {
+        }
       }
     }
-
-    .theme1 {
-      text-align: center;
-      background: url("../assets/img/theme_bg.png") no-repeat;
-      background-position:top left;
-      .theme1_top {
-        margin: 30px 0;
-        p {
-          &:nth-child(1) {
-            font-size: 12px;
-          }
-          &:nth-child(2) {
-            font-size: 24px;
-            margin: 10px 0;
-          }
-          &:nth-child(3) {
-          }
-        }
-      }
-      .theme1_foot {
-        margin-top: 40px;
-      }
+    .theme1_foot {
+      margin-top: 40px;
     }
+  }
 
-    .theme2{ padding:30px 0; background-color:#FCF2F1;
-      .theme2_homeMain{ width:860px; margin:auto; position:relative;
-        .angle{
-          width:50px; height:50px; line-height:50px; border:1px solid #ccc; text-align:center; background-color:#fff; position:absolute; z-index:1; cursor:pointer;
-          &:hover{ opacity:0.8;}
-          i{ font-size:24px;}
+  .theme2 {
+    padding: 30px 0;
+    background-color: #fcf2f1;
+    .theme2_homeMain {
+      width: 860px;
+      margin: auto;
+      position: relative;
+      .angle {
+        width: 50px;
+        height: 50px;
+        line-height: 50px;
+        border: 1px solid #ccc;
+        text-align: center;
+        background-color: #fff;
+        position: absolute;
+        z-index: 1;
+        cursor: pointer;
+        &:hover {
+          opacity: 0.8;
         }
-        .theme2_left{ left:-25px; top:95px;
-          i{}
+        i {
+          font-size: 24px;
         }
-        .theme2_right{ right:-25px; top:95px;
-          i{}
+      }
+      .theme2_left {
+        left: -25px;
+        top: 95px;
+        i {
         }
-        .theme2_home{ width:860px; margin:auto; position:relative; overflow:hidden;
-          ul{ width:1250px; transition:all 1s; //margin-left:-170px;
-            li{ width:240px; height:240px; border:5px solid #FCF2F1; background-color:#fff; text-align:center; float:left;
-              img{ margin-top:50px; width:130px;}
-              p{ margin-top:15px;}
+      }
+      .theme2_right {
+        right: -25px;
+        top: 95px;
+        i {
+        }
+      }
+      .theme2_home {
+        width: 860px;
+        margin: auto;
+        position: relative;
+        overflow: hidden;
+        ul {
+          width: 1250px;
+          transition: all 1s; //margin-left:-170px;
+          li {
+            width: 240px;
+            height: 240px;
+            border: 5px solid #fcf2f1;
+            background-color: #fff;
+            text-align: center;
+            float: left;
+            img {
+              margin-top: 50px;
+              width: 130px;
+            }
+            p {
+              margin-top: 15px;
             }
           }
         }
-        .search_btn{ width:240px; height:45px; display:block; margin:30px auto; border:1px solid #000; background-color:transparent; cursor:pointer;}
+      }
+      .search_btn {
+        width: 240px;
+        height: 45px;
+        display: block;
+        margin: 30px auto;
+        border: 1px solid #000;
+        background-color: transparent;
+        cursor: pointer;
       }
     }
-
-    .theme3{ padding:30px 0; background-color:#FCF2F1;
-      .theme3_home{ width:1024px; margin:auto; position:relative; padding-bottom:80px;
-        .theme3_btn{
-          width:180px; height:40px; line-height:40px; background-color:#fff; text-align:center; position:absolute;
-        }
-        .theme3_home1{ position:relative;
-          img{ width:650px; float:right;}
-          div{ right:80px; top:500px;}
-        }
-        .theme3_home2{ position:absolute; top:80px; left:0;
-          img{ width:480px;}
-          div{ left:80px; top:480px;}
-        }
-      }
-    }
-
   }
+
+  .theme3 {
+    padding: 30px 0;
+    background-color: #fcf2f1;
+    .theme3_home {
+      width: 1024px;
+      margin: auto;
+      position: relative;
+      padding-bottom: 80px;
+      .theme3_btn {
+        width: 180px;
+        height: 40px;
+        line-height: 40px;
+        background-color: #fff;
+        text-align: center;
+        position: absolute;
+      }
+      .theme3_home1 {
+        position: relative;
+        img {
+          width: 650px;
+          float: right;
+        }
+        div {
+          right: 80px;
+          top: 500px;
+        }
+      }
+      .theme3_home2 {
+        position: absolute;
+        top: 80px;
+        left: 0;
+        img {
+          width: 480px;
+        }
+        div {
+          left: 80px;
+          top: 480px;
+        }
+      }
+    }
+  }
+}
 </style>

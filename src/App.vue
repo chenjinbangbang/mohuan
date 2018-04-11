@@ -6,7 +6,7 @@
                 <ul>
                     <li :class="{active: $route.path === '/'}"><router-link to="/">最新款式</router-link></li>
                     <li :class="{active: $route.path === '/theme'}"><router-link to="/theme">主题款式</router-link></li>
-                    <li :class="{active: $route.path === '/b'}"><router-link to="/">串饰</router-link></li>
+                    <li :class="{active: $route.path === '/classify'}"><router-link to="/classify">串饰</router-link></li>
                     <li :class="{active: $route.path === '/c'}"><router-link to="/">戒指</router-link></li>
                     <li :class="{active: $route.path === '/d'}"><router-link to="/">手链</router-link></li>
                     <li :class="{active: $route.path === '/e'}"><router-link to="/">项链</router-link></li>
@@ -45,6 +45,9 @@ export default {
 </script>
 
 <style lang="scss">
+//分类选择器样式
+.el-select-dropdown__item.selected{ color:#333;}
+
 #app {
   font-family: "Avenir", Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -52,6 +55,7 @@ export default {
   //text-align: center;
   color: #000;
   font-size: 14px;
+
   .content {
     > div {
       //min-height:calc(100vh - 600px); padding-bottom:600px;

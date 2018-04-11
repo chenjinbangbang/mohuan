@@ -4,6 +4,7 @@ import Router from 'vue-router';
 
 import home from '@/views/home';
 import theme from '@/views/theme';
+import classify from '@/views/classify';
 import brand from '@/views/brand';
 import tech from '@/views/tech';
 
@@ -29,6 +30,11 @@ export default new Router({
             path: '/brand',
             name: 'brand',
             component: brand
+        },
+        {
+            path: '/classify',
+            name: 'classify',
+            component: classify
         },
         {
             path: '/tech',
