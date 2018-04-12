@@ -85,7 +85,7 @@
             <div class="pay_btn">
               <img src="../assets/img/pay_btn.png" alt="">
               <p>立即选购</p>
-            </div>
+            </div> 
           </div>
         </div>
       </div>
