@@ -47,7 +47,7 @@
       <ul>
         <li v-for="item in [1,2,3,4,5,6,7,8]">
           <img src="../assets/img/classify2.png" alt="">
-          <p>545.00 CNY</p>
+          <p>545.00 CNY</p> 
         </li>
       </ul>
     </div>
