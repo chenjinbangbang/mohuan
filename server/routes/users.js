@@ -18,6 +18,11 @@ router.get('/', (req, res, next) => {
   res.send('respond with a resource');
 });
 
+//获取图形验证码
+let code = require('../modules/code');
+router.get('/code',code);
+
+//用户注册
 router.post('/register',(req,res) => {
 
   let params = req.body;
@@ -35,7 +40,9 @@ router.post('/register',(req,res) => {
 
     res.json({
       error_code: 0,
-      data: '注册成功！'
+      data: {
+        username: params.username
+      }
     });
 
 

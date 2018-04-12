@@ -47,7 +47,7 @@
       <ul>
         <li v-for="item in [1,2,3,4,5,6,7,8]">
           <img src="../assets/img/classify2.png" alt="">
-          <p>545.00 CNY</p> 
+          <p>545.00 CNY</p>
         </li>
       </ul>
     </div>
@@ -85,7 +85,7 @@
             <div class="pay_btn">
               <img src="../assets/img/pay_btn.png" alt="">
               <p>立即选购</p>
-            </div> 
+            </div>
           </div>
         </div>
       </div>
@@ -178,20 +178,38 @@
 </template>
 
 <script>
+  import { getGoodsList } from '@/api/goods';
   export default {
     name: "classify",
     components: {},
     data() {
       return {
+        goodsList: [],
         textureVal: "所有材质",
         textures: ["所有材质", "925银", "调色", "珐琅", "琉璃", "钢丝"],
         jewelVal: "所有宝石",
-        jewels: ["宝石", "宝石1", "宝石2", "宝石3", "宝石4", "宝石5"],
+        jewels: ["所有宝石", "无宝石", "珍珠", "钻石"],
         ulLeft: 0,
         ulLeftIndex: 0,
       };
     },
+    created(){
+      this.getGoodsList();
+    },
     methods: {
+      getGoodsList(){
+
+        let params = {
+          limit: 40, //查询数量
+          name: '串饰', //主分类
+        };
+
+        getGoodsList(params).then(res => {
+          if(res.error_code === 0){
+            this.goodsList = res.data;
+          }
+        });
+      },
       theme2_left() {
         if (this.ulLeftIndex > 0) {
           this.ulLeftIndex--;

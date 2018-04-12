@@ -18,29 +18,31 @@ router.get('/', (req, res, next) => {
   res.send('respond with a resource');
 });
 
-router.post('/register',(req,res) => {
+router.get('/list',(req,res) => {
 
-  let params = req.body;
-  let password = md5(params.password); //md5加密
+  let params = req.query;
+  console.log(params);
 
-  let sql = `insert into users (username,password,phone) values ('${params.username}','${password}','${params.phone}')`;
+  let limit = Number(params.limit),
+    name = params.name;
+
+  //console.log(typeof limit);
+
+  let sql = `select * from goods where name = '串饰' limit ${limit}`;
 
   connection.query(sql,(err,result) => {
     if(err){
-      console.log(`注册失败：${err.message}`);
+      console.log(`查询商品失败：${err.message}`);
       return;
     }
 
-    console.log(result);
+    //console.log(result);
 
     res.json({
       error_code: 0,
-      data: '注册成功！'
+      data: result
     });
-
-
   });
-
 });
 
 module.exports = router;
