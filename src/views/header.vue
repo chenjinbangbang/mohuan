@@ -11,9 +11,9 @@
             <router-link to="/about">
                 <img src="../assets/img/nav.png" alt="" class="icon">
             </router-link>
-            <router-link to="/register">
+            <!-- <router-link to="/register"> -->
                 <img src="../assets/img/user.png" alt="" class="icon">
-            </router-link>
+            <!-- </router-link> -->
         </div>
     </div>
 </template>

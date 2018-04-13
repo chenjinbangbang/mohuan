@@ -5,7 +5,7 @@ let md5 = require('js-md5');
 //连接mysql
 let mysql = require('mysql');
 let connection = mysql.createConnection({
-  host: '123.207.246.238',
+  host: 'localhost',
   user: 'root',
   password: 'root',
   port: '3306',

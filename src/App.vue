@@ -6,11 +6,11 @@
                 <ul>
                     <li :class="{active: $route.path === '/'}"><router-link to="/">最新款式</router-link></li>
                     <li :class="{active: $route.path === '/theme'}"><router-link to="/theme">主题款式</router-link></li>
-                    <li :class="{active: $route.path === '/classify'}"><router-link to="/classify">串饰</router-link></li>
-                    <li :class="{active: $route.path === '/c'}"><router-link to="/">戒指</router-link></li>
-                    <li :class="{active: $route.path === '/d'}"><router-link to="/">手链</router-link></li>
-                    <li :class="{active: $route.path === '/e'}"><router-link to="/">项链</router-link></li>
-                    <li :class="{active: $route.path === '/f'}"><router-link to="/">耳环</router-link></li>
+                    <li @click="classifyName" :class="{active: $route.path === '/classify' && $route.query.name === '串饰'}"><router-link to="/classify?name=串饰">串饰</router-link></li>
+                    <li @click="classifyName" :class="{active: $route.path === '/classify' && $route.query.name === '戒指'}"><router-link to="/classify?name=戒指">戒指</router-link></li>
+                    <li @click="classifyName" :class="{active: $route.path === '/classify' && $route.query.name === '手链'}"><router-link to="/classify?name=手链">手链</router-link></li>
+                    <li @click="classifyName" :class="{active: $route.path === '/classify' && $route.query.name === '项链'}"><router-link to="/classify?name=项链">项链</router-link></li>
+                    <li @click="classifyName" :class="{active: $route.path === '/classify' && $route.query.name === '耳环'}"><router-link to="/classify?name=耳环">耳环</router-link></li>
                     <li :class="{active: $route.path === '/brand'}"><router-link to="/brand">品牌</router-link></li>
                     <li :class="{active: $route.path === '/tech'}"><router-link to="/tech">科技</router-link></li>
                 </ul>
@@ -38,15 +38,25 @@ export default {
       msg: "template"
     };
   },
-  created(){
-      
+  created() {
+    //console.log(this.$route);
+  },
+  methods: {
+    classifyName(){
+      let name = this.$route.query.name;
+      if(name){
+        this.$store.dispatch('setName',name);
+      }
+    }
   }
 };
 </script>
 
 <style lang="scss">
 //分类选择器样式
-.el-select-dropdown__item.selected{ color:#333;}
+.el-select-dropdown__item.selected {
+  color: #333;
+}
 
 #app {
   font-family: "Avenir", Helvetica, Arial, sans-serif;
