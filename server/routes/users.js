@@ -1,17 +1,9 @@
-let express = require('express');
-let router = express.Router();
-let md5 = require('js-md5');
+const express = require('express');
+const router = express.Router();
+const md5 = require('js-md5');
 
 //连接mysql
-let mysql = require('mysql');
-let connection = mysql.createConnection({
-  host: 'localhost',
-  user: 'root',
-  password: 'root',
-  port: '3306',
-  database: 'mohuan'
-});
-connection.connect();
+const connection = require('../modules/mysql');
 
 /* GET users listing. */
 router.get('/', (req, res, next) => {
@@ -19,7 +11,7 @@ router.get('/', (req, res, next) => {
 });
 
 //获取图形验证码
-let code = require('../modules/code');
+const code = require('../modules/code');
 router.get('/code',code);
 
 //用户注册

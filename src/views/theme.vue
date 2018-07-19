@@ -1,8 +1,16 @@
 <template>
   <div class="theme">
 
-    <div class="theme_banner">
+    <!--<div class="theme_banner">
       <img src="../assets/img/theme1.png" alt="">
+    </div>-->
+
+    <div class="theme_banner">
+      <swiper :options="swiperOption" ref="mySwiper">
+        <swiper-slide> <img src="../assets/img/theme1.png" alt=""></swiper-slide>
+        <swiper-slide> <img src="../assets/img/theme2.png" alt=""></swiper-slide>
+        <swiper-slide> <img src="../assets/img/theme3.png" alt=""></swiper-slide>
+      </swiper>
     </div>
 
     <!--第一个-->
@@ -368,17 +376,27 @@
 </template>
 
 <script>
+import { swiper,swiperSlide } from 'vue-awesome-swiper';
 export default {
   name: "theme",
-  components: {},
+  components: {swiper,swiperSlide},
   data() {
     return {
+      //轮播图配置
+      swiperOption: {
+        autoplay: true
+      },
       ulLeft: -170 + "px",
       ulLeftIndex: 1,
       ulLeft1: 0,
       ulLeftIndex1: 0,
       theme4Hide: false
     };
+  },
+  computed: {
+    swiper() {
+      return this.$refs.mySwiper.swiper;
+    }
   },
   methods: {
     theme2_left() {
@@ -415,10 +433,15 @@ export default {
 
 <style lang="scss">
 .theme {
-  .theme_banner {
-    img {
-      width: 100%;
+  .theme_banner { overflow:hidden;
+    .swiper-wrapper{ width:300%; display:flex;
+      .swiper-slide{ //flex:1;
+        img {
+          width: 100%;
+        }
+      }
     }
+
   }
 
   .theme1 {

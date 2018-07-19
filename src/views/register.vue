@@ -68,10 +68,10 @@
 
       return {
         dataForm: {
-          username: "进帮",
-          password: "888888",
-          passwordCheck: "888888",
-          phone: "15915155079",
+          username: "",
+          password: "",
+          passwordCheck: "",
+          phone: "",
           code: ""
         },
         checked: false,

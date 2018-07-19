@@ -21,6 +21,9 @@ $color: #ee7a23;
 .clearfix{ clear:both;}
 a:link,a:visited{ text-decoration:none;}
 
+.fade-enter,.fade-leave-to{ opacity:0;}
+.fade-enter-active,.fade-leave-active{ transition: all 1s;}
+
 .animate-enter,.animate-leave-to{ transform:translate(0,100%);}
 .animate-enter-active,.animate-leave-active{ transition: all 0.5s;}
 

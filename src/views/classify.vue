@@ -17,7 +17,6 @@
             <li :class="{active: sortIndex === index}" v-for="(item,index) in sorts" @click="sortFn(index)">{{item}}</li>
           </ul>
         </div>
-
       </div>
     </div>
 
@@ -40,7 +39,7 @@
 
     <div class="classify_goods">
       <ul v-if="!goodsLoading && !goodsNo">
-        <li v-for="item in goodsList" @mousemove="goodsDetails($event)" @mouseout="goodsDetailsShow = false">
+        <li v-for="item in goodsList" @click="goodsDetails($event,item.id)">
           <div class="imgUrl">
             <img :src="item.imgUrl" alt="">
           </div>
@@ -67,126 +66,135 @@
 
     <!-- <div class="xx" :style="{top: detail_top+'px',left: detail_left+'px'}" v-show="goodsDetailsShow"></div> -->
 
-    <div class="detail" :style="{top: detail_top+'px',left: detail_left+'px'}" v-show="goodsDetailsShow">
-      <div class="detail_more">
-        <ul>
-          <li v-for="(item,index) in [1,2]" :class="{active: index === 0}">
-            <img src="../assets/img/classify4.png" alt="">
-          </li>
-        </ul>
-      </div>
+    <transition name="fade">
+      <div class="detail" :style="{top: detail_top+'px',left: detail_left+'px'}" v-show="goodsDetailsShow">
 
-      <div class="detail_intro">
-        <div class="detail_intro_left">
-          <img src="../assets/img/classify4.png" alt="">
-          <div class="qrcode">
-            <div><img src="../assets/img/qrcode.png" alt=""></div>
-            <p>扫描二维码查看产品体验报告</p>
-          </div>
+        <div class="detail_more">
+          <!--<ul>
+            <li v-for="(item,index) in [1,2]" :class="{active: index === 0}">
+              <img src="../assets/img/classify4.png" alt="">
+            </li>
+          </ul>-->
         </div>
 
-        <div class="detail_intro_right">
-          <div class="intro">
-            <h2>我爱你</h2>
-            <p>商品 #7865596CZR</p>
-            <p>扫描二维码查看产品体验报告扫描二维码查看产品体验报告扫描二维码查看产品体验报告</p>
-            <p><span>金属：</span>双色 - 925银和PANDORA Rose</p>
-            <p><span>颜色：</span>红色</p>
-            <p><span>石质：</span>立方氧化锆石</p>
+        <div class="detail_intro">
+          <div class="detail_intro_left">
+            <div class="detail_intro_img">
+              <img :src="attr.imgUrl" alt="">
+            </div>
+            <div class="qrcode">
+              <div><img src="../assets/img/qrcode.png" alt=""></div>
+              <p>扫描二维码查看产品体验报告</p>
+            </div>
           </div>
-          <div class="pay">
-            <h2>598.00 CNY</h2>
-            <div class="pay_btn">
-              <img src="../assets/img/pay_btn.png" alt="">
-              <p>立即选购</p>
+
+          <div class="detail_intro_right">
+            <div class="detail_intro_close" @click="goodsDetailsShow = false">
+              <i class="fa fa-close"></i>
+            </div>
+            <div class="intro">
+              <h2>{{attr.product_name}}</h2>
+              <p>商品 {{attr.product_id}}</p>
+              <p>{{attr.describe}}</p>
+              <p><span>金属：</span>{{attr.metal}}</p>
+              <p><span>颜色：</span>{{attr.color}}</p>
+              <p><span>石质：</span>{{attr.stone}}</p>
+            </div>
+            <div class="pay">
+              <h2>{{attr.price}} CNY</h2>
+              <div class="pay_btn">
+                <img src="../assets/img/pay_btn.png" alt="">
+                <p>立即选购</p>
+              </div>
             </div>
           </div>
         </div>
-      </div>
 
-      <div class="theme2">
-        <div class="theme2_homeMain">
-          <div class="theme2_left angle" @click="theme2_left">
-            <i class="fa fa-angle-left"></i>
-          </div>
-          <div class="theme2_right angle" @click="theme2_right">
-            <i class="fa fa-angle-right"></i>
-          </div>
+        <div class="theme2">
+          <div class="theme2_homeMain">
+            <div class="theme2_left angle" @click="theme2_left">
+              <i class="fa fa-angle-left"></i>
+            </div>
+            <div class="theme2_right angle" @click="theme2_right">
+              <i class="fa fa-angle-right"></i>
+            </div>
 
-          <div class="theme2_home">
-            <ul :style="{'margin-left': ulLeft}">
-              <li>
-                <img src="../assets/img/home6.png" alt="">
-                <p>798.00 CNY</p>
-              </li>
-              <li>
-                <img src="../assets/img/home4.png" alt="">
-                <p>798.00 CNY</p>
-              </li>
-              <li>
-                <img src="../assets/img/home5.png" alt="">
-                <p>98.00 CNY</p>
-              </li>
-              <li>
-                <img src="../assets/img/home6.png" alt="">
-                <p>98.00 CNY</p>
-              </li>
-              <li>
-                <img src="../assets/img/home4.png" alt="">
-                <p>798.00 CNY</p>
-              </li>
-              <li>
-                <img src="../assets/img/home6.png" alt="">
-                <p>798.00 CNY</p>
-              </li>
-              <li>
-                <img src="../assets/img/home4.png" alt="">
-                <p>798.00 CNY</p>
-              </li>
-              <li>
-                <img src="../assets/img/home5.png" alt="">
-                <p>98.00 CNY</p>
-              </li>
-              <li>
-                <img src="../assets/img/home6.png" alt="">
-                <p>98.00 CNY</p>
-              </li>
-              <li>
-                <img src="../assets/img/home4.png" alt="">
-                <p>798.00 CNY</p>
-              </li>
-              <li>
-                <img src="../assets/img/home6.png" alt="">
-                <p>798.00 CNY</p>
-              </li>
-              <li>
-                <img src="../assets/img/home4.png" alt="">
-                <p>798.00 CNY</p>
-              </li>
-              <li>
-                <img src="../assets/img/home5.png" alt="">
-                <p>98.00 CNY</p>
-              </li>
-              <li>
-                <img src="../assets/img/home6.png" alt="">
-                <p>98.00 CNY</p>
-              </li>
-              <li>
-                <img src="../assets/img/home4.png" alt="">
-                <p>798.00 CNY</p>
-              </li>
-            </ul>
-            <div class="clearfix"></div>
-            <div class="animate_nav">
-              <div :class="{active: ulLeftIndex === 0}"></div>
-              <div :class="{active: ulLeftIndex === 1}"></div>
-              <div :class="{active: ulLeftIndex === 2}"></div>
+            <div class="theme2_home">
+              <ul :style="{'margin-left': ulLeft}">
+                <li>
+                  <img src="../assets/img/home6.png" alt="">
+                  <p>798.00 CNY</p>
+                </li>
+                <li>
+                  <img src="../assets/img/home4.png" alt="">
+                  <p>798.00 CNY</p>
+                </li>
+                <li>
+                  <img src="../assets/img/home5.png" alt="">
+                  <p>98.00 CNY</p>
+                </li>
+                <li>
+                  <img src="../assets/img/home6.png" alt="">
+                  <p>98.00 CNY</p>
+                </li>
+                <li>
+                  <img src="../assets/img/home4.png" alt="">
+                  <p>798.00 CNY</p>
+                </li>
+                <li>
+                  <img src="../assets/img/home6.png" alt="">
+                  <p>798.00 CNY</p>
+                </li>
+                <li>
+                  <img src="../assets/img/home4.png" alt="">
+                  <p>798.00 CNY</p>
+                </li>
+                <li>
+                  <img src="../assets/img/home5.png" alt="">
+                  <p>98.00 CNY</p>
+                </li>
+                <li>
+                  <img src="../assets/img/home6.png" alt="">
+                  <p>98.00 CNY</p>
+                </li>
+                <li>
+                  <img src="../assets/img/home4.png" alt="">
+                  <p>798.00 CNY</p>
+                </li>
+                <li>
+                  <img src="../assets/img/home6.png" alt="">
+                  <p>798.00 CNY</p>
+                </li>
+                <li>
+                  <img src="../assets/img/home4.png" alt="">
+                  <p>798.00 CNY</p>
+                </li>
+                <li>
+                  <img src="../assets/img/home5.png" alt="">
+                  <p>98.00 CNY</p>
+                </li>
+                <li>
+                  <img src="../assets/img/home6.png" alt="">
+                  <p>98.00 CNY</p>
+                </li>
+                <li>
+                  <img src="../assets/img/home4.png" alt="">
+                  <p>798.00 CNY</p>
+                </li>
+              </ul>
+              <div class="clearfix"></div>
+              <div class="animate_nav">
+                <div :class="{active: ulLeftIndex === 0}"></div>
+                <div :class="{active: ulLeftIndex === 1}"></div>
+                <div :class="{active: ulLeftIndex === 2}"></div>
+              </div>
             </div>
           </div>
         </div>
-      </div>
 
-    </div>
+      </div>
+    </transition>
+
 
   </div>
 </template>
@@ -249,7 +257,8 @@ export default {
       detail_left: 0, //商品详情距离左边距离
       goodsDetailsShow: false, //商品详情的显示与隐藏
       ulLeft: 0,
-      ulLeftIndex: 0
+      ulLeftIndex: 0,
+      attr: {}
     };
   },
   computed: {
@@ -316,16 +325,23 @@ export default {
       this.getGoodsList();
     },
     //鼠标经过显示商品详情
-    goodsDetails(event) {
+    goodsDetails(event,id) {
+      this.goodsList.forEach(item => {
+        if(item.id === id){
+          this.attr = item;
+        }
+      });
+
+
       this.goodsDetailsShow = true;
-      //console.log(event);
+      //console.log(id);
       let e = event.path;
 
       e.forEach(item => {
         if (item.localName === "li") {
 
           let width = document.body.clientWidth;
-          
+
           //console.log(width);
 
           let left = (width - 1000)/2;
@@ -554,9 +570,13 @@ export default {
         flex: 2;
         text-align: center;
         border-right: 1px solid #ccc;
-        > img {
-          width: 300px;
+        .detail_intro_img{
+          height:320px;
+          > img {
+            width: 300px;
+          }
         }
+
         .qrcode {
           display: flex;
           justify-content: center;
@@ -573,6 +593,9 @@ export default {
       .detail_intro_right {
         flex: 1;
         position: relative;
+        .detail_intro_close{ position:absolute; right:0; top:0; cursor:pointer;
+          i{ padding:10px; font-size:20px; color:#999;}
+        }
         .intro {
           padding: 20px;
           h2 {
@@ -602,6 +625,7 @@ export default {
             align-items: center;
             margin-top: 10px;
             color: #fff;
+            cursor:pointer;
             img {
               width: 40px;
             }

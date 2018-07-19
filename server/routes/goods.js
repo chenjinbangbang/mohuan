@@ -3,15 +3,7 @@ let router = express.Router();
 let md5 = require('js-md5');
 
 //连接mysql
-let mysql = require('mysql');
-let connection = mysql.createConnection({
-  host: 'localhost',
-  user: 'root',
-  password: 'root',
-  port: '3306',
-  database: 'mohuan'
-});
-connection.connect();
+let connection = require('../modules/mysql');
 
 /* GET users listing. */
 router.get('/', (req, res, next) => {
@@ -26,7 +18,7 @@ router.get('/list',(req,res) => {
   //查询数量
   let limit = params.limit;
   let limitVal = ``;
-  
+
   if(limit){
     console.log(limit);
     limit = Number(limit);

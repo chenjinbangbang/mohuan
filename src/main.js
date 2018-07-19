@@ -22,6 +22,10 @@ Vue.use(ElementUI);
 //引入font-awesome
 import 'font-awesome/css/font-awesome.min.css';
 
+//引入vue-awesome-swiper
+import VueAwesomeSeiper from 'vue-awesome-swiper';
+Vue.use(VueAwesomeSeiper);
+
 //引入全局css
 import '@/assets/css/base.scss';
 
